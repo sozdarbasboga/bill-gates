@@ -15,7 +15,7 @@ body {
 
 .balance {
   font-size: 1.5rem;
-  color: green;
+  color: rgb(53, 214, 69);
   margin-top: 10px;
 }
 
@@ -78,11 +78,11 @@ body {
 }
 
 .navbar-logo {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 0px;
-  color: #111;
+  color: #000000;
   margin: 0 0 0 60px;
   background: none;
   border: none;
