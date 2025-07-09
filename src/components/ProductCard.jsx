@@ -7,7 +7,7 @@ const ProductCard = ({ product, balance, quantity, onBuy, onSell, inputQuantity,
 
   return (
     <div className="product-card" style={{ border: '1px solid #eee', borderRadius: 12, padding: 20, margin: 8, background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 220 }}>
-      <img src={product.image} alt={product.name} style={{ width: 80, height: 80, objectFit: 'contain', marginBottom: 12 }} />
+      <img src={product.image} alt={product.name} style={{ width: 150, height: 150, objectFit: 'contain', marginBottom: 12, borderRadius: 0, background: '#fff', display: 'block' }} />
       <h3 style={{ fontSize: '1.1rem', margin: '8px 0' }}>{product.name}</h3>
       <div style={{ color: '#1ed760', fontWeight: 700, marginBottom: 8 }}>${product.price.toLocaleString()}</div>
       <div style={{ display: 'flex', gap: 12, marginBottom: 8, alignItems: 'center' }}>
