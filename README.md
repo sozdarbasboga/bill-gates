@@ -1,7 +1,7 @@
 # Bill Gates'in Parasını Harca (React Uygulaması)
 
 ## Canlı Demo
-[Projeyi Canlı Görüntüle](https://your-demo-link.vercel.app)
+[Projeyi Canlı Görüntüle](https://sozdar-billgates.netlify.app)
 
 Bu proje, Bill Gates'in servetini hayali olarak harcayabileceğiniz, modern ve eğlenceli bir React uygulamasıdır. Neal.fun sitesinin "Spend Bill Gates' Money" oyununa benzer şekilde tasarlanmıştır.
 
