@@ -12,7 +12,10 @@ const App = () => {
   const [balance, setBalance] = useState(100000000000);
   const [cart, setCart] = useState({});
   const [showGames, setShowGames] = useState(false);
-  const [inputQuantities, setInputQuantities] = useState({});
+  // inputQuantities başlangıç değeri tüm ürünler için 0 olmalı
+  const initialInputQuantities = {};
+  products.forEach(product => { initialInputQuantities[product.id] = 0; });
+  const [inputQuantities, setInputQuantities] = useState(initialInputQuantities);
 
   const handleBuy = (productId) => {
     const product = products.find(p => p.id === productId);
@@ -59,7 +62,7 @@ const App = () => {
             quantity={cart[product.id] || 0}
             onBuy={handleBuy}
             onSell={handleSell}
-            inputQuantity={inputQuantities[product.id] || 1}
+            inputQuantity={inputQuantities[product.id] || 0}
             setInputQuantity={val => setInputQuantities(prev => ({ ...prev, [product.id]: val }))}
           />
         ))}
