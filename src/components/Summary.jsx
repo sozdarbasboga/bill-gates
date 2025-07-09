@@ -27,18 +27,18 @@ const Summary = ({ balance, inputQuantities }) => {
               const product = products.find(p => p.id === Number(id));
               return product ? (
                 <div key={id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 48, fontSize: 14, fontWeight: 500, marginBottom: 8 }}>
-                  <span style={{ minWidth: 180, textAlign: 'right' }}>{product.name}</span>
-                  <span style={{ minWidth: 60, textAlign: 'center', fontWeight: 700 }}>x{qty}</span>
-                  <span style={{ minWidth: 120, textAlign: 'left', color: '#1ed760', fontWeight: 700 }}>{formatShortPrice(product.price)}</span>
+                  <span style={{ minWidth: 120, textAlign: 'left' }}>{product.name}</span>
+                  <span style={{ minWidth: 30, textAlign: 'center', fontWeight: 700 }}>x{qty}</span>
+                  <span style={{ minWidth: 80, textAlign: 'left', color: '#1ed760', fontWeight: 700 }}>{formatShortPrice(product.price)}</span>
                 </div>
               ) : null;
             })}
           </div>
-          <div style={{ borderTop: '1px solid #222', width: 300, margin: '14px auto 0 auto' }} />
+          <div style={{ borderTop: '1px solid #222', width: 350, margin: '18px auto 0 auto' }} />
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 48, marginTop: 18, fontSize: 14, fontWeight: 700 }}>
-            <span style={{ minWidth: 180, textAlign: 'right', color: '#222' }}>TOTAL</span>
-            <span style={{ minWidth: 60 }}></span>
-            <span style={{ minWidth: 120, textAlign: 'left', color: '#1ed760', fontWeight: 700 }}>${inputTotal.toLocaleString()}</span>
+            <span style={{ minWidth: 120, textAlign: 'left', color: '#222' }}>TOTAL</span>
+            <span style={{ minWidth: 30 }}></span>
+            <span style={{ minWidth: 80, textAlign: 'left', color: '#1ed760', fontWeight: 700 }}>${inputTotal.toLocaleString()}</span>
           </div>
         </>
       )}
