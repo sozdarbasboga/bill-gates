@@ -61,7 +61,13 @@ const Footer = () => (
     <div style={{ margin: '36px 0 18px 0', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ fontSize: 18, marginBottom: 10, color: '#222' }}>Get new posts!</div>
       <form style={{ display: 'flex', gap: 8 }} onSubmit={e => { e.preventDefault(); alert('Abonelik özelliği demo!'); }}>
-        <input type="email" placeholder="Your email" required style={{ padding: '12px 18px', borderRadius: 6, border: '1.5px solid #ddd', fontSize: 18, outline: 'none', background: '#fffbe6', minWidth: 200 }} />
+        <div style={{ display: 'flex', alignItems: 'center', background: '#fffbe6', border: '1.5px solid #222', borderRadius: 8, padding: '0 0 0 10px', minWidth: 320, height: 48 }}>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: 8 }}>
+            <rect x="2" y="4" width="20" height="16" rx="3" fill="#fffbe6" stroke="#222" strokeWidth="1.5" />
+            <path d="M3 6l9 7 9-7" stroke="#222" strokeWidth="1.5" fill="none" />
+          </svg>
+          <input type="email" placeholder="Your email" required style={{ border: 'none', outline: 'none', background: 'transparent', fontSize: 18, minWidth: 200, height: 44 }} />
+        </div>
         <button type="submit" style={{ background: '#fffbe6', border: '1.5px solid #ddd', borderRadius: 6, fontSize: 18, fontWeight: 600, padding: '12px 22px', cursor: 'pointer', transition: 'background 0.2s, border 0.2s' }}>Subscribe</button>
       </form>
     </div>
