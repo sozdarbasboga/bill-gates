@@ -12,6 +12,7 @@ const App = () => {
   const [balance, setBalance] = useState(100000000000);
   const [cart, setCart] = useState({});
   const [showGames, setShowGames] = useState(false);
+  const [inputQuantities, setInputQuantities] = useState({});
 
   const handleBuy = (productId) => {
     const product = products.find(p => p.id === productId);
@@ -35,26 +36,35 @@ const App = () => {
     }
   };
 
+  // inputQuantities'e göre anlık harcama
+  const inputTotal = Object.entries(inputQuantities).reduce((sum, [id, qty]) => {
+    const product = products.find(p => p.id === Number(id));
+    return sum + (product ? product.price * qty : 0);
+  }, 0);
+  const dynamicBalance = balance - inputTotal;
+
   return (
     <div className="App">
       <Navbar onLogoClick={() => setShowGames(true)} />
       <BillGatesHeader />
       <div className="balance-bar">
-        ${balance.toLocaleString()}
+        ${dynamicBalance.toLocaleString()}
       </div>
       <div className="products-grid">
         {products.map((product) => (
           <ProductCard
             key={product.id}
             product={product}
-            balance={balance}
+            balance={dynamicBalance}
             quantity={cart[product.id] || 0}
             onBuy={handleBuy}
             onSell={handleSell}
+            inputQuantity={inputQuantities[product.id] || 1}
+            setInputQuantity={val => setInputQuantities(prev => ({ ...prev, [product.id]: val }))}
           />
         ))}
       </div>
-      <Summary cart={cart} balance={balance} />
+      <Summary balance={dynamicBalance} inputQuantities={inputQuantities} />
       <Footer />
       <GamesModal open={showGames} onClose={() => setShowGames(false)} />
     </div>
